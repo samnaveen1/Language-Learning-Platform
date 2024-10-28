@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Select Your Language and Level</h2>
+    <ul>
+        {% for language in languages %}
+            <li>{{ language }}</li>
+            <ul>
+                {% for level in levels %}
+                    <li><a href="{{ url_for('course_level', language=language, level=level) }}">{{ level }}</a></li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </ul>
+{% endblock %}
